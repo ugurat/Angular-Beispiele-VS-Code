@@ -95,6 +95,25 @@ git commit -m "aktualisiert"
 git push -u origin main
 ````
 
+Überschreiben
+
+````
+
+git init
+
+git add .
+git commit -m "Initial commit"
+
+git branch -M main 
+
+git remote add origin https://github.com/ugurat/Angular-Beispiele-VS-Code.git
+
+git push -u origin main --force
+
+````
+
+Mit dem Parameter `--force` wird Git-Repo überschrieben. 
+
 ----
 
 
