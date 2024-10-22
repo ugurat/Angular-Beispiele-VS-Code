@@ -1,0 +1,41 @@
+<p>zeitbox works!</p>
+
+<div class="container">
+
+    <h2>Arbeitszeit hinzufügen</h2>
+
+    <form #arbeitszeitForm="ngForm" (ngSubmit)="onSubmit()">
+
+      <div class="mb-3">
+        <label for="datum" class="form-label">Datum</label>
+        <input type="date" id="datum" name="datum" [(ngModel)]="arbeitszeit.datum" class="form-control" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="startzeit" class="form-label">Startzeit</label>
+        <input type="time" id="startzeit" name="startzeit" [(ngModel)]="arbeitszeit.startzeit" class="form-control" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="endzeit" class="form-label">Endzeit</label>
+        <input type="time" id="endzeit" name="endzeit" [(ngModel)]="arbeitszeit.endzeit" class="form-control" required>
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Speichern</button>
+      
+    </form>
+  
+    <hr />
+
+    <h3 class="mt-4">Liste der Arbeitszeiten</h3>
+
+    <ul class="list-group">
+      <li *ngFor="let zeit of arbeitszeiten" class="list-group-item">
+        {{ zeit.datum }}: {{ zeit.startzeit }} - {{ zeit.endzeit }}
+        <button class="btn btn-danger btn-sm float-end" (click)="removeArbeitszeit(zeit.id)">Löschen</button>
+      </li>
+    </ul>
+
+  </div>
+
+  

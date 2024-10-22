@@ -1,0 +1,9 @@
+<p>counterbox works!</p>
+
+<div class="counter d-flex align-items-center">
+    <button class="btn btn-primary me-2" 
+        (click)="this.counterService.minus()">-</button>
+    <div class="mx-2">{{ this.counterService.counter }}</div>
+    <button class="btn btn-primary ms-2" 
+        (click)="this.counterService.plus()">+</button>
+</div>
